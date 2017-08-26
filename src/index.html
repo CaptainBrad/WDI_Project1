@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>WDI Project 1</title>
+    <title>Zompeas</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- inject:js -->
     <!-- endinject -->
@@ -10,6 +10,203 @@
     <!-- endinject -->
   </head>
   <body>
+    <header>
+     <h1>Zompeas</h1>
+   </header>
+
+
+<main>
+
+<!---timer + reset button -->
+  <div id="timer">
+      <button id="reset">Try Again</button>
+      <button id="startStop">Play!</button>
+      <div class="screen">30</div>
+    </div>
+
+  <!--the Grid  -->
+    <div class="divTable">
+    <div class="divTableBody">
+    <div class="divTableRow">
+    <div class="divTableCell movePea">1</div>
+    <div class="divTableCell">1</div>
+    <div class="divTableCell">1</div>
+    <div class="divTableCell">1</div>
+    <div class="divTableCell">1</div>
+    <div class="divTableCell">1</div>
+    <div class="divTableCell">1</div>
+    <div class="divTableCell">1</div>
+    <div class="divTableCell">1</div>
+    <div class="divTableCell">1</div>
+    <div class="divTableCell">1</div>
+    <div class="divTableCell">1</div>
+    </div>
+    <div class="divTableRow">
+    <div class="divTableCell">2</div>
+    <div class="divTableCell">2</div>
+    <div class="divTableCell">2</div>
+    <div class="divTableCell">2</div>
+    <div class="divTableCell">2</div>
+    <div class="divTableCell">2</div>
+    <div class="divTableCell">2</div>
+    <div class="divTableCell">2</div>
+    <div class="divTableCell">2</div>
+    <div class="divTableCell">2</div>
+    <div class="divTableCell">2</div>
+    <div class="divTableCell">2</div>
+    </div>
+    <div class="divTableRow">
+    <div class="divTableCell">3</div>
+    <div class="divTableCell">3</div>
+    <div class="divTableCell">3</div>
+    <div class="divTableCell">3</div>
+    <div class="divTableCell">3</div>
+    <div class="divTableCell">3</div>
+    <div class="divTableCell">3</div>
+    <div class="divTableCell">3</div>
+    <div class="divTableCell">3</div>
+    <div class="divTableCell">3</div>
+    <div class="divTableCell">3</div>
+    <div class="divTableCell">3</div>
+    </div>
+    <div class="divTableRow">
+    <div class="divTableCell">4</div>
+    <div class="divTableCell">4</div>
+    <div class="divTableCell">4</div>
+    <div class="divTableCell">4</div>
+    <div class="divTableCell">4</div>
+    <div class="divTableCell">4</div>
+    <div class="divTableCell">4</div>
+    <div class="divTableCell">4</div>
+    <div class="divTableCell">4</div>
+    <div class="divTableCell">4</div>
+    <div class="divTableCell">4</div>
+    <div class="divTableCell">4</div>
+    </div>
+    <div class="divTableRow">
+    <div class="divTableCell">5</div>
+    <div class="divTableCell">5</div>
+    <div class="divTableCell">5</div>
+    <div class="divTableCell">5</div>
+    <div class="divTableCell">5</div>
+    <div class="divTableCell">5</div>
+    <div class="divTableCell">5</div>
+    <div class="divTableCell">5</div>
+    <div class="divTableCell">5</div>
+    <div class="divTableCell">5</div>
+    <div class="divTableCell">5</div>
+    <div class="divTableCell">5</div>
+    </div>
+    <div class="divTableRow">
+    <div class="divTableCell">6</div>
+    <div class="divTableCell">6</div>
+    <div class="divTableCell">6</div>
+    <div class="divTableCell">6</div>
+    <div class="divTableCell">6</div>
+    <div class="divTableCell inoPea">6</div>
+    <div class="divTableCell inoPea">6</div>
+    <div class="divTableCell inoPea">6</div>
+    <div class="divTableCell">6</div>
+    <div class="divTableCell">6</div>
+    <div class="divTableCell">6</div>
+    <div class="divTableCell">6</div>
+    </div>
+    <div class="divTableRow">
+    <div class="divTableCell">7</div>
+    <div class="divTableCell">7</div>
+    <div class="divTableCell">7</div>
+    <div class="divTableCell">7</div>
+    <div class="divTableCell">7</div>
+    <div class="divTableCell">7</div>
+    <div class="divTableCell">7</div>
+    <div class="divTableCell">7</div>
+    <div class="divTableCell">7</div>
+    <div class="divTableCell">7</div>
+    <div class="divTableCell">7</div>
+    <div class="divTableCell">7</div>
+    </div>
+    <div class="divTableRow">
+    <div class="divTableCell">8</div>
+    <div class="divTableCell">8</div>
+    <div class="divTableCell">8</div>
+    <div class="divTableCell">8</div>
+    <div class="divTableCell">8</div>
+    <div class="divTableCell">8</div>
+    <div class="divTableCell">8</div>
+    <div class="divTableCell">8</div>
+    <div class="divTableCell">8</div>
+    <div class="divTableCell">8</div>
+    <div class="divTableCell">8</div>
+    <div class="divTableCell">8</div>
+    </div>
+    <div class="divTableRow">
+    <div class="divTableCell">9</div>
+    <div class="divTableCell">9</div>
+    <div class="divTableCell">9</div>
+    <div class="divTableCell">9</div>
+    <div class="divTableCell">9</div>
+    <div class="divTableCell">9</div>
+    <div class="divTableCell">9</div>
+    <div class="divTableCell">9</div>
+    <div class="divTableCell">9</div>
+    <div class="divTableCell">9</div>
+    <div class="divTableCell">9</div>
+    <div class="divTableCell">9</div>
+    </div>
+    <div class="divTableRow">
+    <div class="divTableCell">10</div>
+    <div class="divTableCell">10</div>
+    <div class="divTableCell">10</div>
+    <div class="divTableCell">10</div>
+    <div class="divTableCell">10</div>
+    <div class="divTableCell">10</div>
+    <div class="divTableCell">10</div>
+    <div class="divTableCell">10</div>
+    <div class="divTableCell">10</div>
+    <div class="divTableCell">10</div>
+    <div class="divTableCell">10</div>
+    <div class="divTableCell">10</div>
+    </div>
+    <div class="divTableRow">
+    <div class="divTableCell">11</div>
+    <div class="divTableCell">11</div>
+    <div class="divTableCell">11</div>
+    <div class="divTableCell">11</div>
+    <div class="divTableCell">11</div>
+    <div class="divTableCell">11</div>
+    <div class="divTableCell">11</div>
+    <div class="divTableCell">11</div>
+    <div class="divTableCell">11</div>
+    <div class="divTableCell">11</div>
+    <div class="divTableCell">11</div>
+    <div class="divTableCell">11</div>
+    </div>
+    <div class="divTableRow">
+    <div class="divTableCell">12</div>
+    <div class="divTableCell">12</div>
+    <div class="divTableCell">12</div>
+    <div class="divTableCell">12</div>
+    <div class="divTableCell">12</div>
+    <div class="divTableCell">12</div>
+    <div class="divTableCell">12</div>
+    <div class="divTableCell">12</div>
+    <div class="divTableCell">12</div>
+    <div class="divTableCell">12</div>
+    <div class="divTableCell">12</div>
+    <div class="divTableCell">12</div>
+    </div>
+    </div>
+    </div>
+    <!-- DivTable.com -->
+</main>
+
+<aside>
+  <p>this is aside if I want to use it</p>
+</aside>
+
+<footer>
+  <p>this is the footer if I want to use it</p>
+</footer>
 
   </body>
 </html>
