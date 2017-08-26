@@ -6,46 +6,47 @@ $(() => {
   const $startStopBtn = $timer.find('#startStop');
   const $resetBtn = $timer.find('#reset');
   const $cells = $('.divTableCell');
-  const $pea2Move = $('.inoPea');
 
 
-  // let cellIndex = 0;
-  //
-  // setInterval(() => {
-  //   $cells.eq(cellIndex - 1).removeClass('active');
-  //   $cells.eq(cellIndex).addClass('active');
-  //   cellIndex++;
-  // }, 200);
+  let cellIndex = 0;
+
+  setInterval(() => {
+    $cells.eq(cellIndex - 1).removeClass('active');
+    $cells.eq(cellIndex).addClass('active');
+    // if current active cell has a class of inoPea, zombie has collided with a pea
+    // zombie 'eats' pea removeClass of inoPea from cell
+    cellIndex++;
+    if(cellIndex > 143) cellIndex = 0;
+
+    if(cellIndex % 12 === 0) {
+      // we are in the LH column
+      // move the zompea down one column
+      // then move zompea right
+    }
+    if(cellIndex % 12 === 11) {
+      // we are in the RH colum
+      // move zompea down one column
+      // then move zompea left
+    }
+  }, 200);
   // ^^^^^^^^^Zompea movment
   //
   function changeClass() {
-    $cells[peaFrom].removeClass('inoPea').addClass('movePea');
-    $cells[peaTo].removeClass('movePea').addClass('inoPea');
+    $cells.eq(peaFrom).toggleClass('inoPea');
+    $cells.eq(peaTo).toggleClass('inoPea');
   }
 
-  let inoPea = false;
   let peaFrom = null;
   let peaTo = null;
 
   $cells.on('click', (e) => {
-    if(inoPea === false){
-      const index = $cells.index($(e.target));
-      console.log(index);
-      peaFrom = index;
-      return inoPea = true;
-    }
-    if(inoPea === true){
-      const index2 = $cells.index($(e.target));
-      peaTo = index2;
-      console.log('hi');
-      inoPea = false;
-      if(peaFrom !== 0 && peaTo !== 0){
-        changeClass();
-        peaFrom = null;
-        peaTo = null;
-      } else {
-        console.log('nothing');
-      }
+    if(peaFrom === null){
+      peaFrom = $cells.index($(e.target));
+    } else {
+      peaTo = $cells.index($(e.target));
+      changeClass();
+      peaFrom = null;
+      peaTo = null;
     }
   });
 
