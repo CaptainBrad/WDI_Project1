@@ -8,27 +8,49 @@ $(() => {
   const $cells = $('.divTableCell');
 
 
-  let cellIndex = 0;
+  function createZompea(initialCellIndex, initialXDirection, initialYDirection) {
+    let cellIndex = initialCellIndex;
+    let lastCellIndex = initialCellIndex;
+    let directionX = initialXDirection;
+    let directionY = initialYDirection;
 
-  setInterval(() => {
-    $cells.eq(cellIndex - 1).removeClass('active');
-    $cells.eq(cellIndex).addClass('active');
-    // if current active cell has a class of inoPea, zombie has collided with a pea
-    // zombie 'eats' pea removeClass of inoPea from cell
-    cellIndex++;
-    if(cellIndex > 143) cellIndex = 0;
+    setInterval(() => {
+      lastCellIndex = cellIndex;
+      // if current active cell has a class of inoPea, zombie has collided with a pea
+      // zombie 'eats' pea removeClass of inoPea from cell
 
-    if(cellIndex % 12 === 0) {
-      // we are in the LH column
-      // move the zompea down one column
-      // then move zompea right
-    }
-    if(cellIndex % 12 === 11) {
-      // we are in the RH colum
-      // move zompea down one column
-      // then move zompea left
-    }
-  }, 200);
+      if(cellIndex === 11) directionY = 'down';
+      if(cellIndex === 132) directionY = 'up';
+
+      if(cellIndex % 12 === 0 && directionX === 'left') {
+        directionX = initialXDirection;
+
+        cellIndex += (directionY === 'down') ? 12 : -12;
+
+      } else if(cellIndex % 12 === 11 && directionX === 'right') {
+        directionX = 'left';
+
+        cellIndex += (directionY === 'down') ? 12 : -12;
+
+      } else if(directionX === 'right'){
+        cellIndex++;
+      } else {
+        cellIndex--;
+      }
+
+      $cells.eq(cellIndex).addClass('active');
+      $cells.eq(lastCellIndex).removeClass('active');
+      if($cells.eq(cellIndex).hasClass('inoPea')) {
+        $cells.eq(cellIndex).removeClass('inoPea');
+        createZompea(cellIndex, 'right', 'down');
+      }
+    }, 100);
+  }
+
+  createZompea(0, 'right', 'down');
+  createZompea(66, 'right', 'up');
+  createZompea(140, 'right', 'up');
+
   // ^^^^^^^^^Zompea movment
   //
   function changeClass() {
