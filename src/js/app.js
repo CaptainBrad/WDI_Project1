@@ -44,12 +44,14 @@ $(() => {
         $cells.eq(cellIndex).removeClass('inoPea');
         createZompea(cellIndex, 'right', 'down');
       }
-    }, 100);
+      //time set for speed of Zompeas
+    }, 500);
   }
-
+  //create more zompeas function
   createZompea(0, 'right', 'down');
   createZompea(66, 'right', 'up');
   createZompea(140, 'right', 'up');
+  createZompea(72, 'left', 'down');
 
   // ^^^^^^^^^Zompea movment
   //
@@ -64,6 +66,7 @@ $(() => {
   $cells.on('click', (e) => {
     if(peaFrom === null){
       peaFrom = $cells.index($(e.target));
+      $(e).effect('highlight', {color: 'blue'}, 3000);
     } else {
       peaTo = $cells.index($(e.target));
       changeClass();
@@ -83,7 +86,7 @@ $(() => {
   let timerid = null;
 
 
-
+  //timer function - need to start game on click - to move to the top
   $startStopBtn.on('click', () => {
     if(!timerIsRunning)  {
       timerIsRunning = true;
@@ -105,7 +108,7 @@ $(() => {
     }
   }
 
-
+  //reset button - need to reset game when clicked
   $resetBtn.on('click', () => {
     clearInterval(timerid);
     timerIsRunning = false;
