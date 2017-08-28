@@ -7,7 +7,7 @@ $(() => {
   const $resetBtn = $timer.find('#reset');
   const $cells = $('.divTableCell');
 
-
+  //function using combination of Let values
   function createZompea(initialCellIndex, initialXDirection, initialYDirection) {
     let cellIndex = initialCellIndex;
     let lastCellIndex = initialCellIndex;
@@ -21,7 +21,9 @@ $(() => {
 
       if(cellIndex === 11) directionY = 'down';
       if(cellIndex === 132) directionY = 'up';
+      //11 and 132 are set in the index as 11 is top right and 132 is bottom left
 
+      //direction of peas to allow zompeas to snake
       if(cellIndex % 12 === 0 && directionX === 'left') {
         directionX = initialXDirection;
 
@@ -66,7 +68,6 @@ $(() => {
   $cells.on('click', (e) => {
     if(peaFrom === null){
       peaFrom = $cells.index($(e.target));
-      $(e).effect('highlight', {color: 'blue'}, 3000);
     } else {
       peaTo = $cells.index($(e.target));
       changeClass();
@@ -74,7 +75,7 @@ $(() => {
       peaTo = null;
     }
   });
-
+  //inoPea movment ^^^^^^
 
   // .index() find the index of a DOM element in an array of DOM elements
   // .eq(index) target the DOM element with a specific index
