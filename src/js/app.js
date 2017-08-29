@@ -18,8 +18,10 @@ $(() => {
 
 
 
+
+
   //function using combination of Let values
-  function createZompea(initialCellIndex, initialXDirection, initialYDirection) {
+  function createZompea(initialCellIndex, initialXDirection, initialYDirection){
     let cellIndex = initialCellIndex;
     let lastCellIndex = initialCellIndex;
     let directionX = initialXDirection;
@@ -73,15 +75,11 @@ $(() => {
       //time set for speed of Zompeas
     }, 500));
   }
-  //create more zompeas function
-  createZompea(0, 'right', 'down');
-  createZompea(66, 'right', 'up');
-  createZompea(140, 'right', 'up');
-  createZompea(72, 'left', 'down');
 
   // ^^^^^^^^^Zompea movment
   //
   function changeClass() {
+    console.log('inside changeClass', peaFrom, peaTo, $cells.eq(peaFrom));
     $cells.eq(peaFrom).toggleClass('inoPea');
     $cells.eq(peaTo).toggleClass('inoPea');
   }
@@ -101,14 +99,14 @@ $(() => {
   //     peaTo = null;
 
   $cells.on('click', (e) => {
-    if(peaFrom === null && $(e.target)){
+    if(peaFrom === null && $(e.target) && $(e.target).hasClass('inoPea')){
       peaFrom = $cells.index($(e.target));
     } else if ($clickZompea === false && $(e.target).hasClass('active')){
       peaFrom = null;
       return false;
     } else {
       peaTo = $cells.index($(e.target));
-      changeClass();
+      if(peaFrom && peaTo) changeClass();
       peaFrom = null;
       peaTo = null;
     }
@@ -137,16 +135,22 @@ $(() => {
     if(!timerIsRunning)  {
       timerIsRunning = true;
       timerid = setInterval(countDown, 1000);
-      setInterval(timerIds);
+
+      // setInterval(timerIds);
       // timerid = startZompeas();
 
+      //create more zompeas function
+      createZompea(0, 'right', 'down');
+      createZompea(66, 'right', 'up');
+      createZompea(140, 'right', 'up');
+      createZompea(72, 'left', 'down');
 
 
 
     } else {
-      timerIsRunning = false;
-      clearInterval(timerid);
-      stopZompeas();
+      // timerIsRunning = false;
+      // clearInterval(timerid);
+      // stopZompeas();
     }
   });
 
@@ -168,8 +172,20 @@ $(() => {
     timeRemaining = 30;
     $timerScreen.text(timeRemaining);
     stopZompeas();
+    $cells.removeClass('inoPea');
+    $cells.removeClass('active');
+    $cells.slice(65,68).addClass('inoPea');
+    $cells.slice(77,80).addClass('inoPea');
 
-
+    // let $player = 6;
+    //   $player = ($.peasRemaining);
+    //
+    //     if ($('.inoPea') === 6 && peasRemaining === 6){
+    //       $peasRemaining.text( 6 , () => {
+    //     } else $('.inoPea') === 5 && peasRemaining === 5) {
+    //       $peasRemaining.text( 5 , () => {
+    //     } else if $('.inoPea') === 4 && peasRemaining === 5 {
+    //       $peasRemaining.text( 4 , () => {
 
   });
 
