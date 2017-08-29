@@ -1,11 +1,22 @@
 $(() => {
 
-
+  const timerIds = [];
   const $timer = $('#timer');
   const $timerScreen = $timer.find('.screen');
   const $startStopBtn = $timer.find('#startStop');
   const $resetBtn = $timer.find('#reset');
   const $cells = $('.divTableCell');
+
+  // function startZompeas() {
+  //   timerIds.forEach(timerId => setInterval(timerId));
+  // }
+
+
+  function stopZompeas() {
+    timerIds.forEach(timerId => clearInterval(timerId));
+  }
+
+
 
   //function using combination of Let values
   function createZompea(initialCellIndex, initialXDirection, initialYDirection) {
@@ -14,7 +25,17 @@ $(() => {
     let directionX = initialXDirection;
     let directionY = initialYDirection;
 
-    setInterval(() => {
+    // // Audio variables.
+    // const $zomPeaAttack = $('.zomPeaAttack')[0];
+    // not working
+    // function $zomPeaAttack() {
+    //   const $zomPeaAttack = new Audio('https://clyp.it/j501lak5');
+    //   zomPeaAttack.play();
+    // }
+
+
+
+    timerIds.push(setInterval(() => {
       lastCellIndex = cellIndex;
       // if current active cell has a class of inoPea, zombie has collided with a pea
       // zombie 'eats' pea removeClass of inoPea from cell
@@ -45,9 +66,12 @@ $(() => {
       if($cells.eq(cellIndex).hasClass('inoPea')) {
         $cells.eq(cellIndex).removeClass('inoPea');
         createZompea(cellIndex, 'right', 'down');
+        //audio not working :@
+        // audio($zomPeaAttack);
+
       }
       //time set for speed of Zompeas
-    }, 500);
+    }, 500));
   }
   //create more zompeas function
   createZompea(0, 'right', 'down');
@@ -64,10 +88,24 @@ $(() => {
 
   let peaFrom = null;
   let peaTo = null;
+  const $clickZompea = false;
+  // const $clickZompea = false;
+
+  // $cells.on('click', (e) => {
+  //   if(peaFrom === null && $(e.target)){
+  //     peaFrom = $cells.index($(e.target));
+  //   } else {
+  //     peaTo = $cells.index($(e.target));
+  //     changeClass();
+  //     peaFrom = null;
+  //     peaTo = null;
 
   $cells.on('click', (e) => {
-    if(peaFrom === null){
+    if(peaFrom === null && $(e.target)){
       peaFrom = $cells.index($(e.target));
+    } else if ($clickZompea === false && $(e.target).hasClass('active')){
+      peaFrom = null;
+      return false;
     } else {
       peaTo = $cells.index($(e.target));
       changeClass();
@@ -75,6 +113,12 @@ $(() => {
       peaTo = null;
     }
   });
+  // } if ($clickZompea === false && $(e.target).hasClass('active'));{
+  //   ($clickZompea).prop('disabled');
+
+
+
+  // });
   //inoPea movment ^^^^^^
 
   // .index() find the index of a DOM element in an array of DOM elements
@@ -85,6 +129,7 @@ $(() => {
   let timeRemaining = 30;
   let timerIsRunning = false;
   let timerid = null;
+  // let gameStart = false; // game does not start until start button clicked;
 
 
   //timer function - need to start game on click - to move to the top
@@ -92,10 +137,16 @@ $(() => {
     if(!timerIsRunning)  {
       timerIsRunning = true;
       timerid = setInterval(countDown, 1000);
+      setInterval(timerIds);
+      // timerid = startZompeas();
+
+
+
 
     } else {
       timerIsRunning = false;
       clearInterval(timerid);
+      stopZompeas();
     }
   });
 
@@ -103,6 +154,7 @@ $(() => {
     if (timeRemaining === 0) {
       clearInterval(timerid);
       timerIsRunning = false;
+      stopZompeas();
     } else {
       timeRemaining --;
       $timerScreen.text(timeRemaining);
@@ -115,6 +167,7 @@ $(() => {
     timerIsRunning = false;
     timeRemaining = 30;
     $timerScreen.text(timeRemaining);
+    stopZompeas();
 
 
 
