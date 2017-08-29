@@ -16,6 +16,10 @@ $(() => {
     timerIds.forEach(timerId => clearInterval(timerId));
   }
 
+  let player = 6;
+  const $peasRemaining = $('.peasRemaining');
+  // let doomMessage = embraceDoom
+  // const $doommessage = $('.doomMessage');
 
 
 
@@ -68,6 +72,15 @@ $(() => {
       if($cells.eq(cellIndex).hasClass('inoPea')) {
         $cells.eq(cellIndex).removeClass('inoPea');
         createZompea(cellIndex, 'right', 'down');
+        player --;
+        $peasRemaining.text(player);
+        if(player === 0){
+          timeRemaining = 0;
+          countDown();
+        }
+        // $doomMessage.text('embrace your doom!')
+
+
         //audio not working :@
         // audio($zomPeaAttack);
 
@@ -80,29 +93,19 @@ $(() => {
   //
   function changeClass() {
     console.log('inside changeClass', peaFrom, peaTo, $cells.eq(peaFrom));
-    $cells.eq(peaFrom).toggleClass('inoPea');
-    $cells.eq(peaTo).toggleClass('inoPea');
+    $cells.eq(peaFrom).removeClass('inoPea');
+    $cells.eq(peaTo).addClass('inoPea');
   }
 
   let peaFrom = null;
   let peaTo = null;
-  const $clickZompea = false;
-  // const $clickZompea = false;
-
-  // $cells.on('click', (e) => {
-  //   if(peaFrom === null && $(e.target)){
-  //     peaFrom = $cells.index($(e.target));
-  //   } else {
-  //     peaTo = $cells.index($(e.target));
-  //     changeClass();
-  //     peaFrom = null;
-  //     peaTo = null;
 
   $cells.on('click', (e) => {
-    if(peaFrom === null && $(e.target) && $(e.target).hasClass('inoPea')){
+    if(peaFrom === null && $(e.target).hasClass('inoPea')){
       peaFrom = $cells.index($(e.target));
-    } else if ($clickZompea === false && $(e.target).hasClass('active')){
+    } else if ($(e.target).hasClass('active')){
       peaFrom = null;
+      peaTo = null;
       return false;
     } else {
       peaTo = $cells.index($(e.target));
@@ -111,8 +114,6 @@ $(() => {
       peaTo = null;
     }
   });
-  // } if ($clickZompea === false && $(e.target).hasClass('active'));{
-  //   ($clickZompea).prop('disabled');
 
 
 
@@ -148,10 +149,10 @@ $(() => {
 
 
     } else {
-      // timerIsRunning = false;
-      // clearInterval(timerid);
-      // stopZompeas();
+      // ($peasRemaining === 0) {
+      //   stopZompeas();
     }
+    $startStopBtn.prop('disabled', true);
   });
 
   function countDown() {
@@ -176,16 +177,25 @@ $(() => {
     $cells.removeClass('active');
     $cells.slice(65,68).addClass('inoPea');
     $cells.slice(77,80).addClass('inoPea');
+    peaFrom = null;
+    peaTo = null;
+    player = 6;
+    $peasRemaining.text(player);
+    $startStopBtn.prop('disabled', false);
 
-    // let $player = 6;
-    //   $player = ($.peasRemaining);
-    //
-    //     if ($('.inoPea') === 6 && peasRemaining === 6){
-    //       $peasRemaining.text( 6 , () => {
-    //     } else $('.inoPea') === 5 && peasRemaining === 5) {
+
+    //reseting counter to - 6,5,4 etc.
+    // $peasRemaining.text(player);
+    // return player;
+
+
+    // $peasRemaining.text( 6 , () => {
+    //     if($('.inoPea') === 6 && peasRemaining === 6){
     //       $peasRemaining.text( 5 , () => {
-    //     } else if $('.inoPea') === 4 && peasRemaining === 5 {
+    //     } else($('.inoPea') === 5 && peasRemaining === 5) {
     //       $peasRemaining.text( 4 , () => {
+    //     } else if $('.inoPea') === 4 && peasRemaining === 5) {
+
 
   });
 
