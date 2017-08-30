@@ -16,10 +16,19 @@ $(() => {
     timerIds.forEach(timerId => clearInterval(timerId));
   }
 
-  let player = 6;
+  let player = $('.inoPea').length;  //number of Inopeas
   const $peasRemaining = $('.peasRemaining');
   // let doomMessage = embraceDoom
   const $doomMessage = $('.doomMessage');
+
+
+  const $highScore = $('.highScore'); //highscore let
+
+  function applyTopScore() {
+    if(player > parseFloat($highScore.text())) {
+      $highScore.html(player);
+    }
+  }
 
 
 
@@ -71,15 +80,31 @@ $(() => {
       $cells.eq(lastCellIndex).removeClass('active');
       if($cells.eq(cellIndex).hasClass('inoPea')) {
         $cells.eq(cellIndex).removeClass('inoPea');
+        peaFrom = null;
         createZompea(cellIndex, 'right', 'down');
         player --;
         $peasRemaining.text(player);
-        if(player === 0){
+
+
+        // if(player === 0){
+        //   timeRemaining = 0;
+        //   countDown();
+        //   $doomMessage.text('You lose');
+        // } else if (player === > 0){
+        //   timeRemaining = 0;
+        //   countDown();
+        //   $doomMessage.text('You saved some peas!... but your efforts are in vain as they will perish eventually');
+        // }
+
+        // if(player > 0 && timeRemaining === 0){
+        //   // countDown();
+        //   $doomMessage.text('You saved some peas!... but your efforts are in vain as they will perish eventually');
+        // }
+        if(player === 0) {
           timeRemaining = 0;
           countDown();
           $doomMessage.text('You lose');
         }
-        // $doomMessage.text('embrace your doom!')
 
 
         //audio not working :@
@@ -89,6 +114,12 @@ $(() => {
       //time set for speed of Zompeas
     }, 500));
   }
+
+
+
+
+
+
 
   // ^^^^^^^^^Zompea movment
   //
@@ -104,6 +135,7 @@ $(() => {
   $cells.on('click', (e) => {
     if(peaFrom === null && $(e.target).hasClass('inoPea')){
       peaFrom = $cells.index($(e.target));
+      // if peaFrom hasClass active
     } else if ($(e.target).hasClass('active')){
       peaFrom = null;
       peaTo = null;
@@ -158,9 +190,14 @@ $(() => {
 
   function countDown() {
     if (timeRemaining === 0) {
+      applyTopScore();
       clearInterval(timerid);
       timerIsRunning = false;
       stopZompeas();
+      if(player > 0 && timeRemaining === 0){
+        // countDown();
+        $doomMessage.text('You saved some peas!... but your efforts are in vain as they will alll eventually perish!');
+      }
     } else {
       timeRemaining --;
       $timerScreen.text(timeRemaining);
@@ -180,23 +217,15 @@ $(() => {
     $cells.slice(77,80).addClass('inoPea');
     peaFrom = null;
     peaTo = null;
-    player = 6;
+    player = $('.inoPea').length;
     $peasRemaining.text(player);
     $startStopBtn.prop('disabled', false);
     $doomMessage.text('Embrace your DOOOMMMM!');
 
 
-    //reseting counter to - 6,5,4 etc.
-    // $peasRemaining.text(player);
-    // return player;
 
 
-    // $peasRemaining.text( 6 , () => {
-    //     if($('.inoPea') === 6 && peasRemaining === 6){
-    //       $peasRemaining.text( 5 , () => {
-    //     } else($('.inoPea') === 5 && peasRemaining === 5) {
-    //       $peasRemaining.text( 4 , () => {
-    //     } else if $('.inoPea') === 4 && peasRemaining === 5) {
+
 
 
   });
