@@ -240,11 +240,16 @@ $(() => {
         // countDown();
         $doomMessage.text('You saved some peas!... but your efforts are in vain as they will alll eventually perish!');
         audioEffectsyay();
+        inoPeaJump($('div.divTableCell.inoPea'));
+
       }
     } else {
       timeRemaining --;
       $timerScreen.text(timeRemaining);
     }
+  }
+  function inoPeaJump(inopea){
+    inopea.toggleClass('animated shake');
   }
 
   //reset button - need to reset game when clicked
