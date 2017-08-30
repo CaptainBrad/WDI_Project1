@@ -51,10 +51,20 @@ p {
   &.active {
     background-image: url('https://image.ibb.co/cafWRk/peas_zombie.png');
     background-size: cover;
-
   }
 
 }
+
+  .divTableCell {
+    &.cMan {
+      background-image: url('https://image.ibb.co/cNGEGk/cMan.png');
+      background-size: cover;
+
+  }
+}
+
+
+
 
 .divTableRow {
 	display: table-row;
