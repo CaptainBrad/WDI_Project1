@@ -141,11 +141,15 @@ $(() => {
       peaTo = null;
       return false;
     } else {
+      if(peaFrom !== null && $(e.target).hasClass('inoPea')){
+        peaFrom = null;
+      }
       peaTo = $cells.index($(e.target));
       if(peaFrom && peaTo) changeClass();
       peaFrom = null;
       peaTo = null;
     }
+
   });
 
 
