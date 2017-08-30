@@ -19,7 +19,7 @@ $(() => {
   let player = 6;
   const $peasRemaining = $('.peasRemaining');
   // let doomMessage = embraceDoom
-  // const $doommessage = $('.doomMessage');
+  const $doomMessage = $('.doomMessage');
 
 
 
@@ -77,6 +77,7 @@ $(() => {
         if(player === 0){
           timeRemaining = 0;
           countDown();
+          $doomMessage.text('You lose');
         }
         // $doomMessage.text('embrace your doom!')
 
@@ -182,6 +183,7 @@ $(() => {
     player = 6;
     $peasRemaining.text(player);
     $startStopBtn.prop('disabled', false);
+    $doomMessage.text('Embrace your DOOOMMMM!');
 
 
     //reseting counter to - 6,5,4 etc.
