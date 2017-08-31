@@ -6,6 +6,8 @@ $(() => {
   const $startStopBtn = $timer.find('#startStop');
   const $resetBtn = $timer.find('#reset');
   const $cells = $('.divTableCell');
+  const $intro = $('.intro');
+  const $ok = $('.ok');
 
   //audio variables
 
@@ -24,7 +26,7 @@ $(() => {
   function audioEffectsLose() {
     const $loseLaugh = new Audio('/audio/loseLaugh.wav');
     $loseLaugh.play();
-    $loseLaugh.volume = 1.5;
+    $loseLaugh.volume = 1.0;
   }
 
   function audioEffectsyay() {
@@ -220,6 +222,9 @@ $(() => {
       createZompea(66, 'right', 'up');
       createZompea(84, 'right', 'up');
       createZompea(72, 'left', 'down');
+      createZompea(66, 'left', 'up');
+      createZompea(13, 'right', 'up');
+      createZompea(13, 'left', 'down');
 
 
 
@@ -229,6 +234,11 @@ $(() => {
     }
     $startStopBtn.prop('disabled', true);
   });
+
+  const $divTablebody = $('.divTablebody');
+
+  $divTablebody.css('visibility', 'hidden');
+
 
   function countDown() {
     if (timeRemaining === 0) {
@@ -252,6 +262,10 @@ $(() => {
     inopea.toggleClass('animated shake');
   }
 
+  $ok.on('click', () => {
+    $intro.fadeOut();
+  });
+
   //reset button - need to reset game when clicked
   $resetBtn.on('click', () => {
     clearInterval(timerid);
@@ -261,8 +275,8 @@ $(() => {
     stopZompeas();
     $cells.removeClass('inoPea');
     $cells.removeClass('active');
-    $cells.slice(65,68).addClass('inoPea');
-    $cells.slice(77,80).addClass('inoPea');
+    $cells.slice(40,44).addClass('inoPea');
+    $cells.slice(52,56).addClass('inoPea');
     peaFrom = null;
     peaTo = null;
     player = $('.inoPea').length;
