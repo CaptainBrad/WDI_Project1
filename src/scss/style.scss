@@ -3,15 +3,20 @@
 }
 
  h2 {
-color: lightgreen;
+
 font-family: 'Eater', cursive;
 font-size: 100px;
 padding: 5px;
 margin: 5px;
+color: rgb(255, 255, 255);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  text-shadow: 0 0 20px rgb(254,252,201) , 10px -10px 30px rgb(254,236,133) , -20px -20px 40px rgb(255,174,52) , 20px -40px 50px rgb(236,118,12) , -20px -60px 60px rgb(205,70,6) , 0 -80px 70px rgb(151,55,22) , 10px -90px 80px rgb(69,27,14) ;
+  color: lightgreen;
 }
 
 html {
-  min-height: 150%;
+  min-height: 110%;
 }
 
 body {
@@ -50,7 +55,8 @@ p {
   // max-height: 200px;
   margin: 10px auto;
   float:left;
-  margin-left: 50px;
+  margin-left: 100px;
+
 
 
 
@@ -75,6 +81,7 @@ p {
   // position: relative;
   background-image: url('/images/magma.jpg');
   background-size: cover;
+
 
   // &:after {
   //   content: '';
@@ -123,9 +130,7 @@ p {
 	display: table-row-group;
 }
 
-.screen {
-  border: 1px solid black;
-}
+
 
 .movePea {
   background-image: url('https://intro.com/100/100');
@@ -159,16 +164,21 @@ border: orange;
   display: flex;
   justify-content: center;
   align-items: center;
+
   // display: none; remove later to show the intro screen
   .intro-inner {
     width: 50%;
   }
+
 }
 
 img {
-  width: 4%;
-  height: auto;
-  background: darkgrey;
+  width: 20%;
+height: auto;
+
+text-align: center;
+float: left;
+background: none;
 }
 main {
 display: flex;
@@ -183,31 +193,67 @@ flex-direction: row;
 
 .life {
   border: 1px solid white;
-  margin: 10px auto;
-  width: 90%;
+  margin: 0 auto;
+  width: 300px;
+  height: 100px;
+  padding: 10px;
+  color: lightgreen;
   // float: left;
 }
 
 .winLose {
   border: 1px solid white;
-  margin: 10px auto;
-  width: 90%;
+    margin: 0 auto;
+    width: 300px;
+    height: 100px;
+    padding: 10px;
 }
 
 .highScore {
   border: 1px solid white;
-  margin: 10px auto;
-  width: 90%;
+  margin: 0 auto;
+  width: 300px;
+  height: 100px;
+  padding: 10px;
   // float: right;
 }
 
 #timer {
   border: 1px solid white;
-  width: 90%;
-  margin-left: 12px;
+  argin: 0 auto;
+  width: 300px;
+  height: 100px;
+  padding: 10px;
+ font-size: 25px;
 
 
 }
+
+footer {
+  background: black;
+  color: white;
+  padding: 40px;
+  margin-top:  200px;
+  margin-bottom: 0;
+}
+
+button {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #34d960;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+button:hover {
+  background: #fc3c3c;
+  text-decoration: none;
+}
+
 
 @media only screen and (max-width: 500px) {
 
