@@ -17,23 +17,22 @@
   <!-- endinject -->
 </head>
 <body>
-  <!-- <header> -->
-    <h1>Zompeas</h1>
-  <!-- </header> -->
+  <h1>Zompeas</h1>
 
   <div class="intro">
-      <div class="intro-inner">
+    <div class="intro-inner">
       <h2>Zompeas</h2>
       <h3>Welcome to the Apeacalypse!</h3>
 
 
-     <p>A Zombie plague has spread across Pea City. It’s up to YOU to save the last innocent peas.
+      <p>A Zombie plague has spread across Pea City. It’s up to YOU to save the last innocent peas.
 
-     How to play: The innocent peas are too scared to move. Click on the Innocent peas and then click again on a safe grid location.
+        How to play: The innocent peas are too scared to move. Click on the Innocent peas and then click again on a safe grid location.
 
-     You have 30 seconds to keep your innocent peas alive and away from the Zompeas.
+        You have 30 seconds to keep your innocent peas alive and away from the Zompeas.
 
-     If a Innocent pea is attacked it will become infected and the task of saving peas will become more of a challenge.</p>
+        If a Innocent pea is attacked it will become infected and the task of saving peas will become more of a challenge.
+      </p>
 
       <button class="ok">Embrace your Doom!</button>
 
@@ -42,228 +41,155 @@
 
 
   <main>
-    <!-- <div class="sidebox"> -->
-<div class="both">
-  <div class ="winLose">  <p> <span class="doomMessage">Save the Peas!</span></p></div>
+    <div class="both">
+      <div class ="winLose">
+        <p>
+          <span class="doomMessage">Save the Peas!</span>
+        </p>
+      </div>
 
 
-  <div class="life"> <img src="/images/inoPea.png" <p>Number of Innocent Peas<br/><p> <span class="peasRemaining">-</span></p></p></div>
+      <div class="life">
+        <img src="/images/inoPea.png">
+        <p>Number of Innocent Peas</p><br/><span class="peasRemaining">-</span>
+      </div>
 
 
-  <div class="highScore">  <p> High Score: <span class="highScore">0</span></p> </div>
+      <div class="highScore">
+        <p> High Score: <span class="highScore">0</span></p>
+      </div>
 
+      <div id="timer">
+        <button id="startStop">Play!</button>
+        <button id="reset">Reset</button>
 
-
-    <!-- <audio id="inoWoo" src="../audio/inoWoo.wav">play></audio>
-    <audio id="loseLaugh" src="../audio/loseLaugh.wav">play></audio> -->
-    <!-- <audio id="zomPea" src="../audio/zomPea.wav">play></audio> -->
-
-    <!---timer + reset button -->
-    <div id="timer">
-      <button id="startStop">Play!</button>
-      <button id="reset">Reset</button>
-
-      <div class="screen">time:30</div>
+        <div class="screen">time:30</div>
+      </div>
     </div>
-</div>
-<!-- </div> -->
 
-<audio id="forWhom" src="/public/audio/ForWhom.mp3">play></audio>
+    <audio id="forWhom" src="/public/audio/ForWhom.mp3"></audio>
 
-    <!-- <div class="zomPeaAttack">
-    <audio src="https://clyp.it/j501lak5" preload="auto">
-    moany moan
-  </audio> -->
-
-  <!--the Grid  -->
-  <div class="divTable">
-    <!-- <img src="/images/destroyed.jpg"> -->
-    <div class="divTableBody">
-      <div class="divTableRow">
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
+    <div class="divTable">
+      <div class="divTableBody">
+        <div class="divTableRow">
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+        </div>
+        <div class="divTableRow">
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+        </div>
+        <div class="divTableRow">
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+        </div>
+        <div class="divTableRow">
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell inoPea"></div>
+          <div class="divTableCell inoPea"></div>
+          <div class="divTableCell inoPea"></div>
+          <div class="divTableCell inoPea"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+        </div>
+        <div class="divTableRow">
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell inoPea"></div>
+          <div class="divTableCell inoPea"></div>
+          <div class="divTableCell inoPea"></div>
+          <div class="divTableCell inoPea"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+        </div>
+        <div class="divTableRow">
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+        </div>
+        <div class="divTableRow">
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+        </div>
+        <div class="divTableRow">
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+          <div class="divTableCell"></div>
+        </div>
       </div>
-      <div class="divTableRow">
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-      </div>
-      <div class="divTableRow">
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-      </div>
-      <div class="divTableRow">
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell inoPea"></div>
-        <div class="divTableCell inoPea"></div>
-        <div class="divTableCell inoPea"></div>
-        <div class="divTableCell inoPea"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-      </div>
-      <div class="divTableRow">
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell inoPea"></div>
-        <div class="divTableCell inoPea"></div>
-        <div class="divTableCell inoPea"></div>
-        <div class="divTableCell inoPea"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-      </div>
-      <div class="divTableRow">
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-      </div>
-      <div class="divTableRow">
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-      </div>
-      <div class="divTableRow">
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-        <div class="divTableCell"></div>
-      </div>
-      <!-- <div class="divTableRow">
-      <div class="divTableCell"></div>
-      <div class="divTableCell"></div>
-      <div class="divTableCell"></div>
-      <div class="divTableCell"></div>
-      <div class="divTableCell"></div>
-      <div class="divTableCell"></div>
-      <div class="divTableCell"></div>
-      <div class="divTableCell"></div>
-      <div class="divTableCell"></div>
-      <div class="divTableCell"></div>
-      <div class="divTableCell"></div>
-      <div class="divTableCell"></div>
     </div>
-    <div class="divTableRow">
-    <div class="divTableCell"></div>
-    <div class="divTableCell"></div>
-    <div class="divTableCell"></div>
-    <div class="divTableCell"></div>
-    <div class="divTableCell"></div>
-    <div class="divTableCell"></div>
-    <div class="divTableCell"></div>
-    <div class="divTableCell"></div>
-    <div class="divTableCell"></div>
-    <div class="divTableCell"></div>
-    <div class="divTableCell"></div>
-    <div class="divTableCell"></div>
-  </div>
-  <div class="divTableRow">
-  <div class="divTableCell"></div>
-  <div class="divTableCell"></div>
-  <div class="divTableCell"></div>
-  <div class="divTableCell"></div>
-  <div class="divTableCell"></div>
-  <div class="divTableCell"></div>
-  <div class="divTableCell"></div>
-  <div class="divTableCell"></div>
-  <div class="divTableCell"></div>
-  <div class="divTableCell"></div>
-  <div class="divTableCell"></div>
-  <div class="divTableCell"></div>
-</div>
-<div class="divTableRow">
-<div class="divTableCell"></div>
-<div class="divTableCell"></div>
-<div class="divTableCell"></div>
-<div class="divTableCell"></div>
-<div class="divTableCell"></div>
-<div class="divTableCell"></div>
-<div class="divTableCell"></div>
-<div class="divTableCell"></div>
-<div class="divTableCell"></div>
-<div class="divTableCell"></div>
-<div class="divTableCell"></div>
-<div class="divTableCell"></div>
-</div> -->
-</div>
-</div>
-<!-- DivTable.com -->
+  </main>
 
-<!-- <div class="zompeaSound">
-<audio src ="../sounds/zomPea.wav">
-rawwrrr
-</audio> -->
-</main>
-
-
-
-<footer>
-  <h5>Created by Brad. Many peas were harmed in the making of this game.</h5>
-</footer>
-
-
+  <footer>
+    <h5>Created by Brad. Many peas were harmed in the making of this game.</h5>
+  </footer>
 
 </body>
 </html>
