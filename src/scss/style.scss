@@ -2,6 +2,15 @@
   box-sizing: border-box;
 }
 
+h1 {
+  font-family: 'Eater', cursive;
+  font-size: 100px;
+  padding: 5px;
+  margin: 5px;
+  color: lightgreen;
+
+}
+
  h2 {
 
 font-family: 'Eater', cursive;
@@ -12,7 +21,14 @@ color: rgb(255, 255, 255);
   -o-text-overflow: clip;
   text-overflow: clip;
   text-shadow: 0 0 20px rgb(254,252,201) , 10px -10px 30px rgb(254,236,133) , -20px -20px 40px rgb(255,174,52) , 20px -40px 50px rgb(236,118,12) , -20px -60px 60px rgb(205,70,6) , 0 -80px 70px rgb(151,55,22) , 10px -90px 80px rgb(69,27,14) ;
-  color: lightgreen;
+  color: green;
+  // text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  // text-shadow: black;
+}
+
+h3 {
+  font-family: 'Saira', sans-serif;
+  font-size: 30px;
 }
 
 html {
@@ -35,6 +51,8 @@ body {
 
 p {
   color: lightgreen;
+  font-family: 'Saira', sans-serif;
+  font-size: 21px;
 }
 
 // .doomMessage .peasRemaining {
@@ -46,6 +64,7 @@ p {
 .screen {
   color: lightgreen;
   text-decoration-color: red;
+  margin: 23px;
 }
 
 .divTable {
@@ -79,7 +98,7 @@ p {
 
 .divTable {
   // position: relative;
-  background-image: url('/images/magma.jpg');
+  background-image: url('/public/images/magma.jpg');
   background-size: cover;
 
 
@@ -164,6 +183,9 @@ border: orange;
   display: flex;
   justify-content: center;
   align-items: center;
+  // background-image: url('https://image.ibb.co/jmeRxQ/buildings.png');
+  // background-position: bottom;
+  // background-repeat: repeat;
 
   // display: none; remove later to show the intro screen
   .intro-inner {
@@ -198,6 +220,10 @@ flex-direction: row;
   height: 100px;
   padding: 10px;
   color: lightgreen;
+  background:black;
+  font-size: 15px;
+  font-family: 'Saira', sans-serif;
+  margin-left: 20px;
   // float: left;
 }
 
@@ -207,6 +233,8 @@ flex-direction: row;
     width: 300px;
     height: 100px;
     padding: 10px;
+    background: black;
+    margin-left: 20px;
 }
 
 .highScore {
@@ -215,16 +243,21 @@ flex-direction: row;
   width: 300px;
   height: 100px;
   padding: 10px;
+  background: black;
+  margin-left: 20px;
   // float: right;
 }
 
 #timer {
   border: 1px solid white;
-  argin: 0 auto;
+  margin: 0 auto;
   width: 300px;
-  height: 100px;
+  height: 150px;
   padding: 10px;
  font-size: 25px;
+ background: black;
+ margin-left: 20px;
+
 
 
 }
@@ -240,7 +273,7 @@ footer {
 button {
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
-  border-radius: 28px;
+
   font-family: Arial;
   color: #ffffff;
   font-size: 20px;
@@ -252,6 +285,10 @@ button {
 button:hover {
   background: #fc3c3c;
   text-decoration: none;
+}
+
+.peasRemaining {
+  font-size: 25px;
 }
 
 

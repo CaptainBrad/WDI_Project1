@@ -14,23 +14,23 @@ $(() => {
   // const $inoWoo = $('inoWoo')[0];
   // const $loseLaugh = $('loseLaugh')[0];
   function audioEffects() {
-    const $zomPea = new Audio('/audio/zomPea.wav');
+    const $zomPea = new Audio('/public/audio/zomPea.wav');
     $zomPea.play();
   }
 
   function audioEffectsWoo() {
-    const $inoWoo = new Audio('/audio/inoWoo.wav');
+    const $inoWoo = new Audio('/public/audio/inoWoo.wav');
     $inoWoo.play();
   }
 
   function audioEffectsLose() {
-    const $loseLaugh = new Audio('/audio/loseLaugh.wav');
+    const $loseLaugh = new Audio('/public/audio/loseLaugh.wav');
     $loseLaugh.play();
     $loseLaugh.volume = 1.0;
   }
 
   function audioEffectsyay() {
-    const $yay = new Audio('/audio/yay.mp3');
+    const $yay = new Audio('/public/audio/yay.mp3');
     $yay.play();
 
   }
@@ -248,7 +248,7 @@ $(() => {
       stopZompeas();
       if(player > 0 && timeRemaining === 0){
         // countDown();
-        $doomMessage.text('You saved some peas!... but your efforts are in vain as they will alll eventually perish!');
+        $doomMessage.text('You saved some peas!...');
         audioEffectsyay();
         inoPeaJump($('div.divTableCell.inoPea'));
 
