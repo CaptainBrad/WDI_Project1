@@ -14,6 +14,9 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
+<script src="/public/js/app.js"></script>
+
+
     <link rel="stylesheet" href="/public/css/style.css">
 
     <title>Ferris Lodge East Finchly</title>
@@ -61,7 +64,7 @@
       <img class="d-block w-100" src="https://image.ibb.co/iP6DO9/c89c9bd4_a02d_4ed4_83a2_14a8cbd0320f_65.jpg" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://image.ibb.co/fwz0mU/a202e149_08b4_4fb0_b6d7_78e09de93e8d_65.jpg" alt="Third slide">
+      <img class="d-block w-100" src="https://image.ibb.co/iP6DO9/c89c9bd4_a02d_4ed4_83a2_14a8cbd0320f_65.jpg" alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -144,10 +147,15 @@ The Apartments are to be specified to an extremely high standard.</p></br>
         </button>
       </div>
       <div class="modal-body">
-        <img id="lp" src="images/lPlan2.png"></img>
+        <img id="lp" src="src/images/lPlan2.png"></img>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+        <script> $('#myModal').on('shown.bs.modal', function () {
+          $('#myInput').trigger('focus');
+        });
+        </script>
 
       </div>
     </div>
@@ -165,6 +173,115 @@ The Apartments are to be specified to an extremely high standard.</p></br>
 </table>
 </div>
 </div>
+
+<div class="container">
+
+<h2 style="text-align:center">Gallery</h2>
+
+</br>
+
+<div class="row">
+  <div class="column">
+    <img src="https://image.ibb.co/iP6DO9/c89c9bd4_a02d_4ed4_83a2_14a8cbd0320f_65.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="https://image.ibb.co/iP6DO9/c89c9bd4_a02d_4ed4_83a2_14a8cbd0320f_65.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="https://image.ibb.co/iP6DO9/c89c9bd4_a02d_4ed4_83a2_14a8cbd0320f_65.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="https://image.ibb.co/iP6DO9/c89c9bd4_a02d_4ed4_83a2_14a8cbd0320f_65.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+      <img src="https://image.ibb.co/iP6DO9/c89c9bd4_a02d_4ed4_83a2_14a8cbd0320f_65.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 4</div>
+      <img src="https://image.ibb.co/iP6DO9/c89c9bd4_a02d_4ed4_83a2_14a8cbd0320f_65.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 4</div>
+      <img src="https://image.ibb.co/iP6DO9/c89c9bd4_a02d_4ed4_83a2_14a8cbd0320f_65.jpgimg_mountains_wide.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">4 / 4</div>
+      <img src="https://image.ibb.co/iP6DO9/c89c9bd4_a02d_4ed4_83a2_14a8cbd0320f_65.jpg" style="width:100%">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+
+    <div class="column">
+      <img class="demo cursor" src="https://image.ibb.co/iP6DO9/c89c9bd4_a02d_4ed4_83a2_14a8cbd0320f_65.jpg" style="width:100%" onclick="currentSlide(1)" alt="1">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="https://image.ibb.co/iP6DO9/c89c9bd4_a02d_4ed4_83a2_14a8cbd0320f_65.jpg" style="width:100%" onclick="currentSlide(2)" alt="2">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="https://image.ibb.co/iP6DO9/c89c9bd4_a02d_4ed4_83a2_14a8cbd0320f_65.jpg" style="width:100%" onclick="currentSlide(3)" alt="3">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="https://image.ibb.co/iP6DO9/c89c9bd4_a02d_4ed4_83a2_14a8cbd0320f_65.jpg" style="width:100%" onclick="currentSlide(4)" alt="4">
+    </div>
+  </div>
+</div>
+
+<script>
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+</div>
+</br>
 
 <div class="container">
 
@@ -190,7 +307,7 @@ The Apartments are to be specified to an extremely high standard.</p></br>
 
     <div class="row">
       <div class="col">
-        <p><img  id="tfl" src="images/TFLFL.png"></img> East Finchley Station to Euston Station <br/> <strong>12 minutes</strong></p>
+        <p><img  id="tfl" src="src/images/TFLFL.png"></img> East Finchley Station to Euston Station <br/> <strong>12 minutes</strong></p>
       </div>
       <div class="col">
         <p><i class="fas fa-car"></i><span>:</span></i>Ferris Lodge to Vue Leisure Park <br/> <strong>10 minutes</strong></p>
@@ -202,7 +319,7 @@ The Apartments are to be specified to an extremely high standard.</p></br>
       <div class="container">
   <div class="row">
     <div class="col">
-    <p><img id="tfl" src="images/TFLFL.png"></img> East Finchley Station to Euston Station <br/> <strong>12 minutes</strong></p>
+    <p><img id="tfl" src="src/images/TFLFL.png"></img> East Finchley Station to Euston Station <br/> <strong>12 minutes</strong></p>
     </div>
     <div class="col">
     <p><i class="fas fa-walking"><span>:</span></i>Ferris Lodge to East Finchley Station <br/> <strong>1 mile</strong></p>
@@ -244,7 +361,7 @@ The Apartments are to be specified to an extremely high standard.</p></br>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="./js/app.js" charset="utf-8"></script>
+    <script src="public/js/app.js" charset="utf-8"></script>
 
     <script
   src="https://code.jquery.com/jquery-3.3.1.js"
