@@ -1,0 +1,19 @@
+#lp {
+  width: 220px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+
+}
+
+
+.carousel img{
+  width:800px;
+  height: auto;
+}
+
+#tfl {
+  width: 20px;
+}
